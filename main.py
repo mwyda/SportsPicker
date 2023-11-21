@@ -1,16 +1,11 @@
-# This is a sample Python script.
+# This is a test file for testing newly added modules.
+from connection.Connection import createDBConnection
+from database.CRUD import createTable
+from sql.sql import create_users_table
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    conn = createDBConnection()
+    if conn is not None:
+        createTable(conn, create_users_table())
+    else:
+        print('Failed to create user table! Error: Could not connect to database file.')
