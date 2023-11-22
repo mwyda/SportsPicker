@@ -2,6 +2,7 @@
 Basic sql statements to be executed
 """
 
+
 def create_users_table():
     return """ CREATE TABLE IF NOT EXISTS users (
                                         userID integer PRIMARY KEY,
@@ -16,11 +17,14 @@ def create_users_table():
                                         end_date text
                                     ); """
 
+
 def create_group_table():
     return
 
+
 def create_matchup_table():
     return
+
 
 def create_leaderboard_table():
     return
